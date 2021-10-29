@@ -28,6 +28,10 @@ typedef struct ttSinhVien
     float diemTK;    
 }SinhVien;
 
+/////
+/////////
+////////
+
 void HienThiMenu();
 int ChonMenu();
 void ThucHienMenu();
