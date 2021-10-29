@@ -28,15 +28,12 @@ typedef struct ttSinhVien
     float diemTK;    
 }SinhVien;
 
-//////////////////////////////
-/////////////////////////////
-
 void HienThiMenu();
 int ChonMenu();
 void ThucHienMenu();
 void Nhap1SV(SinhVien &x);
 
-void HienThiMenu()
+/*void HienThiMenu()
 {
     char menu[][20] =   {
                             while(true) 
@@ -56,4 +53,26 @@ void HienThiMenu()
                                 printf("Nhap tuy chon: ");
                             }
                         }
+}*/
+
+int ChonMenu()
+{
+    int chon;
+    HienThiMenu();
+    do
+    {
+        printf("vui long chon chuc nang: %d", MAXMenu);
+        scanf("%d", &chon);
+        if(chon<1||chon>MAXMenu)
+            printf("VUI LONG NHAP LAI CHUC NANG!!!");
+        else
+            break;
+    }while (true);
+    return chon;
+}
+
+int main()
+{
+    ChonMenu();
+    return 0;
 }
