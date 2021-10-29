@@ -32,7 +32,7 @@ typedef struct ttSinhVien
 void HienThiMenu();
 int ChonMenu();
 void ThucHienMenu();
-void Nhap1SV(SinhVien &x)
+void Nhap1SV(SinhVien &x);
 
 void HienThiMenu()
 {
