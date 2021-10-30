@@ -84,6 +84,19 @@ int ChonMenu()
     return chon;
 }
 
+void ThucHienMenu()
+{
+    int chon;
+    do
+    {
+        chon=ChonMenu();
+        switch(chon)    {
+                            case
+                        }   
+    }while(chon!=MAXMenu);
+    printf("\nKET THUC CHUONG TRINH\n")
+}
+
 int main()
 {
     ChonMenu();
