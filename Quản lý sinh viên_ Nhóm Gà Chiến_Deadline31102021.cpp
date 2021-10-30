@@ -121,7 +121,3 @@ int main()
     ChonMenu();
     return 0;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> f428144c75085b550f9f667db9aa5af6d5319bfc
