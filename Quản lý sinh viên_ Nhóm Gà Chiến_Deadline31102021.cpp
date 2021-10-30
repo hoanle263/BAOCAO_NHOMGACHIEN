@@ -19,7 +19,7 @@ struct ttSinhVien
     char hoSV[11];
     char tenLot[21];
     char tenSV[11];
-    ngaySinh Date;
+    Date ngaysinh;
     unsigned char gioiTinh[5];
     char email[31]
       
