@@ -4,7 +4,7 @@
 #include<time.h>
 #include<string.h>
 #define MAX 100
-#define MAXMenu 8
+#define MAXMenu 7
 
 typedef struct ttDate
 {
@@ -23,8 +23,8 @@ struct ttSinhVien
     unsigned char gioiTinh[5];
     char email[31]
       
-};
-typedef SinhVien SV;
+}SV;
+
 
 typedef struct ttDiemSinhVien
 {
@@ -39,8 +39,6 @@ int ChonMenu();
 void ThucHienMenu();
 void Nhap1SV(SV &x);
 void NhapSV(SV a[], int ID, int n);
-void pressAnyKey();
-int xoatheoID(SV a[], int id, int n )
 
 void HienThiMenu()
 {
@@ -48,7 +46,7 @@ void HienThiMenu()
     SinhVien a[MAX];
     int soluongSV = 0;
     int ID = 0;
-    char menu[][20] =   {
+    char menu[][8] =   {
                             while(true) 
                             {
                                 printf("CHUONG TRINH QUAN LY SINH VIEN\n");
@@ -56,63 +54,18 @@ void HienThiMenu()
                                 printf("**  1. Them sinh vien.                               **\n");
                                 printf("**  2. Cap nhat thong tin sinh vien theo ID.          **\n");
                                 printf("**  3. Xoa sinh vien theo ID.                         **\n");
-                                printf("**  4. Tim kiem sinh vien theo ten.                  **\n";
-                                printf("**  5. Sap xep sinh vien theo diem trung binh (GPA). **\n");
-                                printf("**  6. Sap xep sinh vien theo ten.                   **\n");
-                                printf("**  7. Hien thi danh sach sinh vien.                 **\n");
-                                printf("**  8. Ghi danh sach sinh vien vao file.             **\n");
-                                printf("**  0. Thoat                                         **\n");
+                                printf("**  4. Tim kiem sinh vien theo ten.                  **\n";                                
+                                printf("**  5. Sap xep sinh vien theo ten.                   **\n");
+                                printf("**  6. Hien thi danh sach sinh vien.                 **\n");
+                                printf("**  7. Ghi danh sach sinh vien vao file.             **\n");                                
                                 printf("*******************************************************\n");
                                 printf("Nhap tuy chon: ", key);
                             }
-                            switch(key)
+                            for(int i=0; i<MAXMenu; i++)
                             {
-                                case 1:
-                                    printf("\n1. Them sinh vien.");
-                                    ID++;
-                                    pressAnyKey();
-                                    break;
-                                case 2:
-                                    if(soluongSV>0)
-                                    {
-                                        int ID;
-                                        printf("\n2. Cap nhat thong tin sinh vien.");
-                                        printf("\nVui long nhap ID: ", ID);
-
-                                    }
-                                    else
-                                    {
-                                        printf("Danh sach sinh vien trong");
-                                    }
-                                    pressAnyKey();
-                                    break;    
-                                case 3:
-                                {
-                                    if(soluongSV>0)
-                                    {
-                                        int ID;
-                                        printf("\n3. Xoa sinh vien.");
-                                        printf("\nVui long nhap ID: ");
-                                        if(xoatheoID(a[SV], id, soluongSV) == 1)
-                                        {
-                                            printf("\n Sinh vien co ID: %d da bi xoa.", &ID);
-                                                soluongSV--;
-                                        }
-                                    }
-                                    else
-                                    {
-                                        printf("\nDanh sach sinh vien trong!!");
-                                    }
-                                    pressAnyKey();
-                                    break;                                                                                                                    
-                                    }
-                                }
-                                case 4:
-                                {
-                                       
-                                }
+                                printf("%s\n", menu[i]);
                             }
-                        }
+                        }      
 }
 
 int ChonMenu()
@@ -136,4 +89,3 @@ int main()
     ChonMenu();
     return 0;
 }
-////////////////
