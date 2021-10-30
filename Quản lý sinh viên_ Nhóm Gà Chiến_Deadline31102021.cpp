@@ -15,7 +15,7 @@ typedef struct ttDate
 
 struct ttSinhVien
 {
-    char maSo[10];
+    char ID[10];
     char hoSV[11];
     char tenLot[21];
     char tenSV[11];
@@ -75,9 +75,9 @@ void HienThiMenu()
                                 case 2:
                                     if(soluongSV>0)
                                     {
-                                        int id;
+                                        int ID;
                                         printf("\n2. Cap nhat thong tin sinh vien.");
-                                        printf("\nVui long nhap ID: ", id);
+                                        printf("\nVui long nhap ID: ", ID);
 
                                     }
                                     else
@@ -90,10 +90,21 @@ void HienThiMenu()
                                 {
                                     if(soluongSV>0)
                                     {
-                                        int id;
+                                        int ID;
                                         printf("\n3. Xoa sinh vien.");
                                         printf("\nVui long nhap ID: ");
-                                        
+                                        if(xoatheoID(a[SV], id, soluongSV) == 1)
+                                        {
+                                            printf("\n Sinh vien co ID: %d da bi xoa.", &ID);
+                                                soluongSV--;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        printf("\nDanh sach sinh vien trong!!");
+                                    }
+                                    pressAnyKey();
+                                    break;                                                                                                                    
                                     }
                                 }
                             }
