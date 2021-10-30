@@ -12,7 +12,7 @@ typedef struct ttDate
     unsigned int Nam;
 }Date;
 
-typedef struct ttSinhVien
+struct ttSinhVien
 {
     char maSo[10];
     char hoSV[11];
@@ -21,28 +21,40 @@ typedef struct ttSinhVien
     ngaySinh Date;
     unsigned char gioiTinh[5];
     char email[31]
+      
+};
+typedef SinhVien SV;
+
+typedef struct ttDiemSinhVien
+{
     float diemQT;
     float diemCong;
     float diemTH;
     float diemLT;
-    float diemTK;    
-}SinhVien;
-
+    float diemTK;  
+}
 void HienThiMenu();
 int ChonMenu();
 void ThucHienMenu();
-void Nhap1SV(SinhVien &x);
+void Nhap1SV(SV &x);
+void NhapSV(SV a[], int ID, int n);
+void pressAnyKey();
+int xoatheoID(SV a[], int id, int n )
 
-/*void HienThiMenu()
+void HienThiMenu()
 {
+    int key;
+    SinhVien a[MAX];
+    int soluongSV = 0;
+    int ID = 0;
     char menu[][20] =   {
                             while(true) 
                             {
                                 printf("CHUONG TRINH QUAN LY SINH VIEN\n");
                                 printf("*************************MENU**************************\n");
                                 printf("**  1. Them sinh vien.                               **\n");
-                                printf("**  2. Cap nhat thong tin sinh vien boi ID.          **\n");
-                                printf("**  3. Xoa sinh vien boi ID.                         **\n");
+                                printf("**  2. Cap nhat thong tin sinh vien theo ID.          **\n");
+                                printf("**  3. Xoa sinh vien theo ID.                         **\n");
                                 printf("**  4. Tim kiem sinh vien theo ten.                  **\n";
                                 printf("**  5. Sap xep sinh vien theo diem trung binh (GPA). **\n");
                                 printf("**  6. Sap xep sinh vien theo ten.                   **\n");
@@ -50,10 +62,42 @@ void Nhap1SV(SinhVien &x);
                                 printf("**  8. Ghi danh sach sinh vien vao file.             **\n");
                                 printf("**  0. Thoat                                         **\n");
                                 printf("*******************************************************\n");
-                                printf("Nhap tuy chon: ");
+                                printf("Nhap tuy chon: ", key);
+                            }
+                            switch(key)
+                            {
+                                case 1:
+                                    printf("\n1. Them sinh vien.");
+                                    ID++;
+                                    pressAnyKey();
+                                    break;
+                                case 2:
+                                    if(soluongSV>0)
+                                    {
+                                        int id;
+                                        printf("\n2. Cap nhat thong tin sinh vien.");
+                                        printf("\nVui long nhap ID: ", id);
+
+                                    }
+                                    else
+                                    {
+                                        printf("Danh sach sinh vien trong");
+                                    }
+                                    pressAnyKey();
+                                    break;    
+                                case 3:
+                                {
+                                    if(soluongSV>0)
+                                    {
+                                        int id;
+                                        printf("\n3. Xoa sinh vien.");
+                                        printf("\nVui long nhap ID: ");
+                                        
+                                    }
+                                }
                             }
                         }
-}*/
+}
 
 int ChonMenu()
 {
@@ -76,3 +120,4 @@ int main()
     ChonMenu();
     return 0;
 }
+
